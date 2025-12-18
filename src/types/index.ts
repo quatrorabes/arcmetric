@@ -1,10 +1,6 @@
-export type UUID = string;
-
 export interface Contact {
-  id: UUID | number;
+  id: number | string;
   name?: string;
-  firstname?: string;
-  lastname?: string;
   email?: string | null;
   phone?: string | null;
   company?: string | null;
@@ -16,7 +12,7 @@ export interface Contact {
   unifiedqualificationscore?: number | null;
 }
 
-export interface ContactsV2Response {
+export interface ContactsResponse {
   success: boolean;
   contacts: Contact[];
   total: number;
