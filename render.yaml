@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: arcmetric-backend
+    runtime: python-3.11
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && python main.py
+    envVars:
+      - key: DATABASE_URL
+        scope: runtime
+      - key: OPENAI_API_KEY
+        scope: runtime
+      - key: ENVIRONMENT
+        value: production
+      - key: PORT
+        value: "5000"
